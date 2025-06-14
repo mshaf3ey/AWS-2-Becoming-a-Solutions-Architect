@@ -64,67 +64,112 @@ Manual Deployment
 
 1. Network Setup
 VPC
+
 2 Application Load Balancer : internet-facing load balancer & internal load balancer
+
 Internet Gateway
+
 2 availability zones : 2 public subnets & 6 private subnets
+
 Route Tables
+
 Security Groups : Internet-Facing ALB-SG & Internal ALB-SG & FRONT-END-SG & BACK-END-SG & PRIMARY_RDS-SG & STANDBY_RDS-SG
+
 DB subnet group for RDS
 
-2. Compute Setup
+
+1. Compute Setup
+
 Front-End Auto Scaling Group
+
 Back-End Auto Scaling Group
 
+
 3. Database Setup
+
 Primary RDS Instance (mysql engine)
+
 Standby RDS Instance (mysql engine)
 
-4. Monitoring Setup
+
+5. Monitoring Setup
+
 install CLoudWatch Agent
 
-5. CDN Setup
+
+6. CDN Setup
+
 CloudFront Distribution with ALB as origin
 
-6. Domain Setup
+
+7. Domain Setup
+
 create hosted zone with Route 53
 
-7. Certificate Setup
+
+8. Certificate Setup
+
 create public certificate from ACM
+
 
 Security Best Practices
 Network Security
 
 Web servers in public subnets with limited access
+
 Application servers in private subnets
+
 Database servers in isolated private subnets
+
 Security groups with principle of least privilege
+
 
 Data Protection
 
 RDS encryption at rest and in transit
+
 IAM roles with minimal required permissions
+
                 CloudWatchFullAccess
+
                 AmazonSSMFullAccess
+
                 AmazonEC2RoleforSSM
+
                 CloudWatchAgentAdminPolicy
+
                 CloudWatchAgentServerPolicy
+
                 AmazonSSMManagedInstanceCore
 
+
 Database Scaling
+
 Read replicas for read-heavy workloads
+
 Connection pooling for efficient database connections
 
+
 Monitoring & Alerts
+
 CloudWatch Alarms
+
 CPU utilization > 80%
+
 Memory utilization > 85%
 
+
 Backup & Disaster Recovery
+
 Database Backups
+
 Automated daily backups with 7-day retention
+
 Point-in-time recovery enabled
 
+
 Application Backups
+
 EC2 AMI snapshots for server images
 
 <img src = "https://github.com/mshaf3ey/AWS-2-Becoming-a-Solutions-Architect/blob/main/Manara.drawio.png" />
