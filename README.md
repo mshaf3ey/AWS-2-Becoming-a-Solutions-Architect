@@ -172,4 +172,6 @@ Application Backups
 
 EC2 AMI snapshots for server images
 
+
+<h1>Tier Web Application Architecture</h1>
 <img src = "https://github.com/mshaf3ey/AWS-2-Becoming-a-Solutions-Architect/blob/main/Manara.drawio.png" />
